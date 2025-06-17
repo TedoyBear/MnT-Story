@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG Modern - Under Disaster</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="indexUD.html">MnT Story</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="indexUD.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="char.html">Character</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="skills.html">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="items.html">Items</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <h1>Under Disaster</h1>
+            <p>A Story of Millions of Under Disaster Game Players On Earth Cruel Fantasy World</p>
+        </div>
+    </section>
+
+    <section class="synopsis-section">
+        <div class="container">
+            <h2 class="mb-5">Synopsis</h2>
+            <p>
+                In the midst of the hustle and bustle of the Earth in 2204, where technology has been integrated with
+                every aspect of life, live four siblings who dedicate their lives to one goal: gaming. They are legends
+                in cyberspace, conquering every digital challenge with extraordinary expertise. However, destiny has a
+                larger plan than just a pixel and keyboard.
+            </p>
+            <p class="mt-4">
+                A shocking lottery victory changed everything. At the same time, a new phenomenon shakes the virtual
+                universe: Underdisaster, a revolutionary MMORPG that promises unparalleled immersive experience. Without
+                hesitation, the four siblings decided to invest all their lottery prizes into the game, determined to be
+                the strongest, carving their names in the history of Underdisaster.
+            </p>
+            <p class="mt-4">
+                They succeeded. With a clever strategy and unmatched cooperation, they transformed into unstoppable
+                strengths, dominating every RAID and defeating every enemy. However, when Underdisaster entered season
+                5, an unexpected event shook the foundation of reality.
+            </p>
+            <p class="mt-4">
+                Mysteriously, all Underdisaster players on Earth were declared dead. However, this is not the end, but
+                the beginning of the real adventure. Their eyes were open in an amazing fantasy world, found themselves
+                trapped in the in-game character they had built with difficulty.
+            </p>
+            <p class="mt-4">
+                Can these four siblings survive in this foreign world? Will the strength they have enough to face a
+                greater threat than just a boss in the game? Divide this epic story, where the boundary between reality
+                and fantasy blurred, and true adventure has just begun!
+            </p>
+        </div>
+    </section>
+
+    <section class="volume-section">
+        <div class="container">
+            <h2>Novel Volume</h2>
+            <div class="row justify-content-center" id="volumeList">
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-white text-center py-3">
+        <p>&copy; 2025 Under Disaster. All rights reserved.</p>
+    </footer>
+
+    <div class="modal fade" id="volumeDetailModal" tabindex="-1" aria-labelledby="volumeDetailModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="volumeDetailModalLabel">Volumes Detail</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalVolumeImage" src="" alt="Volume Cover" class="img-fluid mb-3"
+                        style="width: 300px; height: auto;">
+                    <h4 id="modalVolumeTitle" class="text-white mb-3"></h4>
+                    <p id="modalVolumeSynopsis" class="text-light"></p>
+                    <p><strong>Genre:</strong> <span id="modalVolumeGenre"></span></p>
+                    <p><strong>Total Chapter:</strong> <span id="modalVolumeChapters"></span></p>
+                    <p><strong>Status:</strong> <span id="modalVolumeStatus"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Closed</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Data volume novel - Disesuaikan dengan detail baru
+        const volumes = [
+            {
+                id: 1,
+                title: "Volume 1: 2nd Mave",
+                description: "Millions of Under Disaster Game players are trapped in the new world with Magic power",
+                fullSynopsis: "Millions of players from the game Under Disaster suddenly find themselves trapped in a brutal fantasy world. Though this world has its own laws and order, power is the ultimate authority. Unlike Earth where human rights and justice are upheld this realm knows only one truth: the strong rule, the weak obey. And they are not the first to arrive. As newcomers, they are met not with kindness, but with cruelty, oppression, and bloodshed from those who came before. In a world devoid of mercy, can they survive? Or will they become just another tragic story written in the annals of this unforgiving land?",
+                genre: "Reincarnation, Fantasy, Action, Adventure, RPG",
+                chapters: 15,
+                status: "On Going",
+                image: "img/vol1.png" // Pastikan gambar ini ada di folder img
+            },
+        ];
+
+        // Get references to modal elements
+        const volumeDetailModal = new bootstrap.Modal(document.getElementById('volumeDetailModal'));
+        const modalVolumeImage = document.getElementById('modalVolumeImage');
+        const modalVolumeTitle = document.getElementById('modalVolumeTitle');
+        const modalVolumeSynopsis = document.getElementById('modalVolumeSynopsis');
+        const modalVolumeGenre = document.getElementById('modalVolumeGenre');
+        const modalVolumeChapters = document.getElementById('modalVolumeChapters');
+        const modalVolumeStatus = document.getElementById('modalVolumeStatus');
+
+        function renderVolumes() {
+            const volumeListDiv = document.getElementById('volumeList');
+            volumeListDiv.innerHTML = ''; // Clear previous content
+
+            volumes.forEach(volume => {
+                const cardCol = document.createElement('div');
+                cardCol.className = 'col-md-6 col-lg-4 col-xl-3 mb-4 d-flex'; // d-flex for consistent height
+
+                const card = document.createElement('div');
+                card.className = 'volume-card';
+                card.setAttribute('data-bs-toggle', 'modal'); // Untuk memicu modal
+                card.setAttribute('data-bs-target', '#volumeDetailModal'); // Target modal
+                card.setAttribute('data-volume-id', volume.id); // Simpan ID volume untuk diambil nanti
+
+                card.innerHTML = `
+                    <img src="${volume.image}" class="card-img-top" alt="${volume.title}">
+                    <div class="volume-card-body">
+                        <h5>${volume.title}</h5>
+                        <p>${volume.description}</p>
+                    </div>
+                `;
+                cardCol.appendChild(card);
+                volumeListDiv.appendChild(cardCol);
+            });
+
+            // Add event listeners to each volume card
+            document.querySelectorAll('.volume-card').forEach(card => {
+                card.addEventListener('click', function () {
+                    const volumeId = this.dataset.volumeId;
+                    const selectedVolume = volumes.find(vol => vol.id == volumeId);
+
+                    if (selectedVolume) {
+                        modalVolumeImage.src = selectedVolume.image;
+                        modalVolumeImage.alt = selectedVolume.title;
+                        modalVolumeTitle.textContent = selectedVolume.title;
+                        modalVolumeSynopsis.textContent = selectedVolume.fullSynopsis;
+                        modalVolumeGenre.textContent = selectedVolume.genre;
+                        modalVolumeChapters.textContent = selectedVolume.chapters;
+                        modalVolumeStatus.textContent = selectedVolume.status;
+
+                        // Show the modal
+                        volumeDetailModal.show();
+                    }
+                });
+            });
+        }
+
+        // Call the render function when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', renderVolumes);
+    </script>
+</body>
+
+</html>

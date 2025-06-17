@@ -1,0 +1,170 @@
+/* Tooltip kustom untuk item */
+.tooltip-custom {
+  position: fixed;
+  background-color: #3b3b4f;
+  color: #e0e0e0;
+  border: 1px solid #00bcd4;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.85em;
+  max-width: 280px;
+  z-index: 1070;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  transform: translateY(10px);
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+}
+.tooltip-custom.show {
+  opacity: 1;
+}
+
+.item-card {
+  background: linear-gradient(145deg, #2b2b3a, #1e1e2f);
+  border: 1px solid #4a4a5e;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
+  border-color: #00bcd4;
+}
+
+.item-card-header {
+  background-color: #3c3c4f;
+  padding: 15px;
+  border-bottom: 1px solid #4a4a5e;
+  font-size: 1.3rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+/* Menggunakan warna kelangkaan langsung pada teks header */
+.item-card-header .item-name {
+  color: var(--item-rarity-color, #e0e0e0); /* Fallback color */
+}
+
+.item-card-body {
+  padding: 15px;
+  flex-grow: 1;
+}
+
+.item-card-body p {
+  margin-bottom: 8px;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+}
+
+.item-card-body strong {
+  color: #00bcd4;
+}
+
+.item-card-footer {
+  padding: 15px;
+  border-top: 1px solid #4a4a5e;
+  background-color: #3c3c4f;
+  text-align: right;
+  font-size: 0.85em;
+  color: #c0c0c0;
+}
+
+/* Search and Filter Section */
+.search-filter-container {
+  background-color: #2b2b3a;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.form-control.bg-dark,
+.form-select.bg-dark {
+  background-color: #3c3c4f !important;
+  color: #e0e0e0 !important;
+  border-color: #00bcd4 !important;
+}
+
+.form-control.bg-dark::placeholder {
+  color: #a0a0a0;
+}
+
+.input-group-text.bg-dark {
+  background-color: #3c3c4f !important;
+  border-color: #00bcd4 !important;
+  color: #00bcd4 !important;
+}
+
+/* NEW: Rarity Colors for Items - Define as CSS variables for easier use */
+.rarity-common {
+  --item-rarity-color: #cccccc;
+  color: var(--item-rarity-color);
+}
+.rarity-rare {
+  --item-rarity-color: #007bff;
+  color: var(--item-rarity-color);
+}
+.rarity-epic {
+  --item-rarity-color: #8a2be2;
+  color: var(--item-rarity-color);
+}
+.rarity-legend {
+  --item-rarity-color: #ff8c00;
+  color: var(--item-rarity-color);
+}
+.rarity-mystic {
+  --item-rarity-color: #dc143c;
+  color: var(--item-rarity-color);
+}
+.rarity-runes-type-1 {
+  --item-rarity-color: #7fffd4;
+  color: var(--item-rarity-color);
+}
+.rarity-runes-type-2 {
+  --item-rarity-color: #adff2f;
+  color: var(--item-rarity-color);
+}
+.rarity-runes-type-3 {
+  --item-rarity-color: #ffd700;
+  color: var(--item-rarity-color);
+}
+.rarity-runes-type-4 {
+  --item-rarity-color: #da70d6;
+  color: var(--item-rarity-color);
+}
+
+/* Untuk dropdown rarity filter */
+.option-common {
+  color: #cccccc;
+}
+.option-rare {
+  color: #007bff;
+}
+.option-epic {
+  color: #8a2be2;
+}
+.option-legend {
+  color: #ff8c00;
+}
+.option-mystic {
+  color: #dc143c;
+}
+.option-runes-type-1 {
+  color: #7fffd4;
+}
+.option-runes-type-2 {
+  color: #adff2f;
+}
+.option-runes-type-3 {
+  color: #ffd700;
+}
+.option-runes-type-4 {
+  color: #da70d6;
+}

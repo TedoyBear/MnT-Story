@@ -1,0 +1,244 @@
+/* Custom CSS for MnT Story - Tema Gelap (Optimasi Tanpa Gambar Cover) */
+
+:root {
+    /* Define custom CSS variables for easier theming */
+    --primary-bg-color: #1a1a2e;        /* Latar belakang sangat gelap (Deep Blue/Purple-ish) */
+    --secondary-bg-color: #2e2e4e;      /* Latar belakang untuk card atau elemen kedua (Slightly lighter than primary-bg-color) */
+    --accent-color: #9356c5;            /* Warna ungu cerah untuk aksen (Blue Violet) */
+    --light-text-color: #e0e0e0;        /* Warna teks terang untuk kontras */
+    --muted-text-color: #b0b0b0;        /* Warna teks lebih redup */
+    --card-hover-shadow: rgba(110, 76, 172, 0.342); /* Bayangan hover dengan sentuhan warna aksen */
+    --navbar-text-hover: #ffffff; /* Warna teks navbar saat hover agar lebih terang */
+}
+
+body {
+    background-color: var(--primary-bg-color); /* Latar belakang global website */
+    color: var(--light-text-color); /* Warna teks default */
+    font-family: 'Montserrat', sans-serif; /* Menggunakan font Montserrat */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--light-text-color); /* Pastikan semua heading berwarna terang */
+    font-weight: 700; /* Font lebih tebal untuk judul */
+    font-family: 'Playfair Display', serif; /* Contoh font elegan untuk judul utama */
+}
+
+/* Header (Navbar) */
+.navbar {
+    background-color: var(--primary-bg-color) !important;
+    border-bottom: 1px solid var(--secondary-bg-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sedikit bayangan untuk navbar */
+}
+
+.navbar-brand {
+    color: var(--accent-color) !important; /* Warna aksen untuk brand */
+    font-weight: 700;
+    font-family: 'Playfair Display', serif; /* Font khusus untuk brand */
+    text-shadow: 0 0 5px rgba(138, 43, 226, 0.5); /* Efek glow ringan pada brand */
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: var(--light-text-color) !important; /* Kembali ke putih saat hover */
+}
+
+.navbar .nav-link {
+    color: var(--light-text-color) !important;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    font-weight: 600; /* Lebih tebal untuk nav link */
+}
+
+.navbar .nav-link:hover, .navbar .nav-link.active {
+    color: var(--navbar-text-hover) !important; /* Lebih terang saat hover/aktif */
+    text-shadow: 0 0 8px var(--accent-color); /* Efek glow ungu pada teks nav saat hover */
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    min-height: 90vh;
+    padding-top: 100px; /* Offset for fixed navbar */
+    padding-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/hero-bg.jpg'); /* Overlay langsung di CSS */
+    background-size: cover;
+    background-position: center center;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); /* Bayangan teks untuk kontras */
+}
+
+.hero-section .display-3 {
+    font-size: 3.8rem;
+    text-shadow: 0 0 15px rgba(138, 43, 226, 0.7); /* Efek glow yang lebih kuat */
+    font-family: 'Playfair Display', serif;
+}
+
+.hero-section .lead {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+/* Section Common Styling */
+section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+/* Author Section */
+#author .author-image {
+    border: 5px solid var(--accent-color);
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.6); /* Efek glow yang lebih menonjol */
+    filter: brightness(1.1); /* Sedikit cerahkan gambar */
+}
+
+#author .lead {
+    color: var(--light-text-color); /* Pastikan lead text tetap terang */
+    font-weight: 400;
+}
+
+/* Card Styling (Novel List & Platforms) */
+.card {
+    background-color: var(--secondary-bg-color); /* Warna yang lebih terang dari primary bg */
+    color: var(--light-text-color);
+    border: none;
+    border-radius: 12px; /* Sudut membulat untuk card */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease;
+    overflow: hidden; /* Pastikan konten tidak meluap dari sudut membulat */
+    position: relative; /* Untuk elemen pseudo */
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 1.5rem 3rem var(--card-hover-shadow) !important;
+    background-color: #3b3b64; /* Sedikit lebih cerah saat hover */
+}
+
+.card .card-body {
+    padding: 1.75rem; /* Padding lebih besar di dalam card */
+}
+
+.card .card-title {
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 1.5rem; /* Judul card lebih besar */
+    margin-bottom: 0.75rem;
+}
+
+.card .card-text.text-muted {
+    color: var(--muted-text-color) !important;
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Background gradient for card titles (decorative) */
+.card .card-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, var(--accent-color), transparent);
+    margin-top: 0.5rem;
+    margin-left: 0;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem; /* Ukuran tombol lebih besar */
+    border-radius: 8px;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(138, 43, 226, 0.4); /* Bayangan untuk tombol primary */
+}
+
+.btn-primary:hover {
+    background-color: #6A1AAB; /* Sedikit lebih gelap saat hover */
+    border-color: #6A1AAB;
+    transform: translateY(-3px); /* Efek hover yang lebih kuat */
+    box-shadow: 0 6px 15px rgba(138, 43, 226, 0.6);
+}
+
+.btn-outline-primary {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    font-weight: 600;
+    padding: 0.6rem 1.2rem; /* Ukuran tombol lebih kecil dari primary tapi tetap nyaman */
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 10px rgba(138, 43, 226, 0.3); /* Bayangan untuk tombol outline */
+}
+
+/* Styling for Flag Icons */
+.flag-icon {
+    font-size: 4em; /* Ukuran emoji bendera */
+    line-height: 1; /* Pastikan tidak ada spasi ekstra */
+    margin-bottom: 1rem; /* Spasi bawah ikon */
+    display: inline-block; /* Penting agar bisa diatur margin/padding */
+    /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.4); */ /* Bayangan opsional untuk menonjolkan bendera */
+    /* Tidak perlu color: var(--accent-color); karena emoji sudah memiliki warnanya sendiri */
+}
+
+/* Untuk Safari dan browser berbasis WebKit, mungkin perlu menambahkan font-family untuk emoji */
+@supports (font-variation-settings: normal) {
+    .flag-icon {
+        font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+}
+
+
+/* Footer Styling */
+footer {
+    background-color: var(--primary-bg-color) !important;
+    border-top: 1px solid var(--secondary-bg-color);
+    color: var(--muted-text-color) !important;
+    font-size: 0.9em;
+    padding: 2rem 0; /* Padding lebih besar */
+}
+
+/* Custom Scrollbar (optional, for modern feel) */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--primary-bg-color);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: 4px;
+    border: 2px solid var(--primary-bg-color);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #6A1AAB;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section .display-3 {
+        font-size: 2.5rem;
+    }
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+    .card .card-title {
+        font-size: 1.3rem;
+    }
+    .btn-primary, .btn-outline-primary {
+        padding: 0.6rem 1.2rem;
+    }
+    .flag-icon {
+        font-size: 3em; /* Ukuran bendera lebih kecil di mobile */
+    }
+}

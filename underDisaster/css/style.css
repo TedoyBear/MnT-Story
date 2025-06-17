@@ -1,0 +1,606 @@
+/* General Body and Layout Styles (Existing) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a2e; /* Darker background */
+    color: #e0e0e0; /* Light text color */
+    line-height: 1.6;
+    margin-top: 56px; /* Adjust for fixed navbar */
+}
+
+.navbar {
+    background-color: #1e1e2f; /* Slightly lighter than body */
+    border-bottom: 1px solid #4a4a5e;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand {
+    font-family: 'Orbitron', sans-serif; /* Example for a more sci-fi/tech feel */
+    color: #00bcd4 !important; /* Cyan accent */
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px rgba(0, 188, 212, 0.7);
+}
+
+.navbar-nav .nav-link {
+    color: #c0c0c0 !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #00bcd4 !important;
+    text-shadow: 0 0 8px rgba(0, 188, 212, 0.7);
+}
+
+.page-header { /* This general page-header might be less relevant now for home, but keep for other pages */
+    min-height: 300px;
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    background-color: #1a1a2e; /* Primary if no image desired */
+}
+
+/* Footer */
+.footer {
+    background-color: #1e1e2f;
+    border-top: 1px solid #4a4a5e;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+    color: #c0c0c0;
+}
+
+/* General Card styles (Existing) */
+.card-title {
+    color: #00bcd4;
+    font-weight: bold;
+}
+
+.card-text {
+    color: #c0c0c0;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #00bcd4;
+    border-color: #00bcd4;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #0097a7;
+    border-color: #0097a7;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.7);
+}
+
+.btn-secondary {
+    background-color: #4a4a5e;
+    border-color: #4a4a5e;
+    color: #e0e0e0;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #5d5d72;
+    border-color: #5d5d72;
+}
+
+/* Modal Tabs Customization */
+.nav-tabs {
+    border-bottom: 1px solid #4a4a5e;
+}
+
+.nav-tabs .nav-link {
+    color: #c0c0c0;
+    background-color: #2b2b3a;
+    border: 1px solid #4a4a5e;
+    border-bottom-color: transparent;
+    margin-right: 2px;
+    border-radius: 0.25rem 0.25rem 0 0;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #00bcd4;
+    border-color: #00bcd4 #00bcd4 transparent #00bcd4;
+    background-color: #3b3b4f;
+}
+
+.nav-tabs .nav-link.active {
+    color: #00bcd4;
+    background-color: #1e1e2f;
+    border-color: #00bcd4 #00bcd4 #1e1e2f #00bcd4;
+    font-weight: bold;
+}
+
+.tab-content {
+    border: 1px solid #4a4a5e;
+    border-top: none;
+    background-color: #1e1e2f;
+    padding: 15px;
+    border-radius: 0 0 0.25rem 0.25rem;
+}
+
+/* List group items within modal for items and skills */
+.list-group-item {
+    background-color: #2b2b3a !important;
+    border-color: #4a4a5e !important;
+    color: #e0e0e0;
+}
+
+.list-group-item:hover {
+    background-color: #3c3c4f !important;
+    color: #00bcd4;
+}
+
+/* Tooltip Custom styles */
+.tooltip-custom {
+    position: fixed;
+    background-color: #3b3b4f;
+    color: #e0e0e0;
+    border: 1px solid #00bcd4;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    max-width: 280px;
+    z-index: 1070;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    transform: translateY(10px);
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+}
+.tooltip-custom.show {
+    opacity: 1;
+}
+
+/* Character Card */
+.character-card {
+    background: linear-gradient(145deg, #2b2b3a, #1e1e2f);
+    border: 1px solid #4a4a5e;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.character-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
+    border-color: #00bcd4;
+}
+
+.character-card-header {
+    background-color: #3c3c4f;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #4a4a5e;
+}
+
+/* Avatar berbasis teks/ikon */
+.character-avatar-placeholder {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #00bcd4;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-right: 15px;
+    border: 2px solid #0097a7;
+    box-shadow: 0 0 8px rgba(0, 188, 212, 0.7);
+}
+
+.character-info h5 {
+    margin-bottom: 0;
+    color: #00bcd4;
+    font-size: 1.4rem;
+}
+
+.character-info small {
+    color: #c0c0c0;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.character-body {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.character-stats-summary p {
+    margin-bottom: 5px;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+}
+.character-stats-summary strong {
+    color: #00bcd4;
+}
+
+.character-footer {
+    padding: 15px;
+    border-top: 1px solid #4a4a5e;
+    background-color: #3c3c4f;
+    text-align: right;
+}
+
+/* Search and Sort/Filter Section */
+.search-sort-container, .search-filter-container {
+    background-color: #2b2b3a;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.form-control.bg-dark, .form-select.bg-dark {
+    background-color: #3c3c4f !important;
+    color: #e0e0e0 !important;
+    border-color: #00bcd4 !important;
+}
+
+.form-control.bg-dark::placeholder {
+    color: #a0a0a0;
+}
+
+.input-group-text.bg-dark {
+    background-color: #3c3c4f !important;
+    border-color: #00bcd4 !important;
+    color: #00bcd4 !important;
+}
+
+/* Modal Enhancements */
+.modal-content {
+    background-color: #1e1e2f; /* Warna latar belakang modal */
+    border: 1px solid #00bcd4; /* Border modal */
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 188, 212, 0.7); /* Efek bayangan glow */
+    color: #e0e0e0; /* Warna teks umum dalam modal */
+}
+.modal-header {
+    background: linear-gradient(90deg, #00bcd4, #0097a7); /* Gradient untuk header */
+    color: white;
+    border-bottom: none;
+    padding: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.modal-title {
+    color: white !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+.btn-close-white {
+    filter: none !important;
+    color: white;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+.btn-close-white:hover {
+    opacity: 1;
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+.modal-body strong {
+    color: #00bcd4; /* Warna untuk label strong (mis. Genre:, Status:) */
+}
+
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Bayangan untuk gambar */
+}
+
+.table-dark thead th {
+    color: #00bcd4;
+    border-color: #4a4a5e;
+}
+.table-dark tbody tr td {
+    border-color: #4a4a5e;
+}
+
+.modal-footer {
+    background-color: #2b2b3a; /* Warna latar belakang footer */
+    border-top: 1px solid #4a4a5e; /* Border atas footer */
+    padding: 15px 25px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+/* Icons for stats (Font Awesome) */
+.stat-icon {
+    margin-right: 8px;
+    vertical-align: middle;
+    color: #00bcd4;
+    font-size: 1.1em;
+    text-shadow: 0 0 5px rgba(0, 188, 212, 0.7);
+}
+
+/* Rarity Colors for Items - Define as CSS variables for easier use */
+.rarity-common { --item-rarity-color: #cccccc; color: var(--item-rarity-color); }
+.rarity-rare { --item-rarity-color: #007bff; color: var(--item-rarity-color); }
+.rarity-epic { --item-rarity-color: #8a2be2; color: var(--item-rarity-color); }
+.rarity-legend { --item-rarity-color: #ff8c00; color: var(--item-rarity-color); }
+.rarity-mystic { --item-rarity-color: #dc143c; color: var(--item-rarity-color); }
+.rarity-runes-type-1 { --item-rarity-color: #7fffd4; color: var(--item-rarity-color); }
+.rarity-runes-type-2 { --item-rarity-color: #adff2f; color: var(--item-rarity-color); }
+.rarity-runes-type-3 { --item-rarity-color: #ffd700; color: var(--item-rarity-color); }
+.rarity-runes-type-4 { --item-rarity-color: #da70d6; color: var(--item-rarity-color); }
+
+/* Apply variable to item name in header */
+.item-card-header .item-name {
+    color: var(--item-rarity-color, #e0e0e0); /* Fallback color */
+}
+
+/* Style for dropdown options, ensuring their text color is correct */
+.form-select option.option-common { color: #cccccc; }
+.form-select option.option-rare { color: #007bff; }
+.form-select option.option-epic { color: #8a2be2; }
+.form-select option.option-legend { color: #ff8c00; }
+.form-select option.option-mystic { color: #dc143c; }
+.form-select option.option-runes-type-1 { color: #7fffd4; }
+.form-select option.option-runes-type-2 { color: #adff2f; }
+.form-select option.option-runes-type-3 { color: #ffd700; }
+.form-select option.option-runes-type-4 { color: #da70d6; }
+
+/* Item Card Specific Styles */
+.item-card {
+    background: linear-gradient(145deg, #2b2b3a, #1e1e2f);
+    border: 1px solid #4a4a5e;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
+    border-color: #00bcd4;
+}
+
+.item-card-header {
+    background-color: #3c3c4f;
+    padding: 15px;
+    border-bottom: 1px solid #4a4a5e;
+    font-size: 1.3rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.item-card-body {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.item-card-body p {
+    margin-bottom: 8px;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+}
+
+.item-card-body strong {
+    color: #00bcd4;
+}
+
+.item-card-footer {
+    padding: 15px;
+    border-top: 1px solid #4a4a5e;
+    background-color: #3c3c4f;
+    text-align: right;
+    font-size: 0.85em;
+    color: #c0c0c0;
+}
+
+/* Skill Card Specific Styles (from previous update) */
+.skill-card {
+    background: linear-gradient(145deg, #2b2b3a, #1e1e2f);
+    border: 1px solid #4a4a5e;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
+    border-color: #00bcd4;
+}
+
+.skill-card-header {
+    background-color: #3c3c4f;
+    padding: 15px;
+    border-bottom: 1px solid #4a4a5e;
+    color: #00bcd4;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.skill-card-body {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.skill-card-body p {
+    margin-bottom: 8px;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+}
+
+.skill-card-body strong {
+    color: #00bcd4;
+}
+
+.skill-card-footer {
+    padding: 15px;
+    border-top: 1px solid #4a4a5e;
+    background-color: #3c3c4f;
+    text-align: right;
+    font-size: 0.85em;
+    color: #c0c0c0;
+}
+
+
+/* --- NEW STYLES FOR indexUD.html --- */
+.hero-section {
+    background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), url('../img/hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    box-shadow: inset 0 0 50px rgba(0, 188, 212, 0.3);
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to top, #1a1a2e, transparent);
+}
+
+.hero-section h1 {
+    font-size: 4.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(0, 188, 212, 0.8);
+    letter-spacing: 2px;
+    animation: fadeInScale 2s ease-out forwards;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 2.5s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.synopsis-section {
+    background-color: #1e1e2f;
+    padding: 80px 0;
+    color: #e0e0e0;
+    text-align: justify;
+}
+
+.synopsis-section h2 {
+    color: #00bcd4;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.synopsis-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.volume-section {
+    background-color: #1a1a2e;
+    padding: 80px 0;
+}
+
+.volume-section h2 {
+    color: #00bcd4;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.volume-card {
+    background: linear-gradient(145deg, #2b2b3a, #1e1e2f);
+    border: 1px solid #4a4a5e;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.volume-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
+    border-color: #00bcd4;
+}
+
+.volume-card img {
+    width: 100%;
+    height: 350px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures image covers the area, might crop */
+    border-bottom: 1px solid #4a4a5e;
+}
+
+.volume-card-body {
+    padding: 20px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.volume-card-body h5 {
+    color: #00bcd4;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.volume-card-body p {
+    color: #c0c0c0;
+    font-size: 1rem;
+}

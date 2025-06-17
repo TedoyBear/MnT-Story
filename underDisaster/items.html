@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG Modern - Items</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/items.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="indexUD.html">MnT Story</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexUD.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="char.html">Character</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="skills.html">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="items.html">Items</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header text-center text-white d-flex align-items-center justify-content-center">
+        <div class="container">
+            <h1>Inventur item</h1>
+            <p class="lead">Find a variety of equipment, weapons, and artifacts in this world.</p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <section class="mb-5">
+            <h2 class="text-white text-center mb-4">List of items</h2>
+            <div class="row mb-4 justify-content-center search-filter-container">
+                <div class="col-md-5 mb-3 mb-md-0">
+                    <div class="input-group">
+                        <span class="input-group-text bg-dark border-secondary text-white"><i class="fas fa-search"></i></span>
+                        <input type="text" class="form-control bg-dark text-white border-secondary" id="itemSearch" placeholder="Find the name or description of the item ...">
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3 mb-md-0">
+                    <div class="input-group">
+                        <span class="input-group-text bg-dark border-secondary text-white"><i class="fas fa-box"></i></span>
+                        <select class="form-select bg-dark text-white border-secondary" id="itemTypeFilter">
+                            <option value="all">All types</option>
+                            <option value="Weapon">Weapon</option>
+                            <option value="Shield">Shield</option>
+                            <option value="Armor">Armor</option>
+                            <option value="Accessory">Accessory</option>
+                            <option value="Consumable">Consumable</option>
+                            </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-text bg-dark border-secondary text-white"><i class="fas fa-gem"></i></span>
+                        <select class="form-select bg-dark border-secondary" id="itemRarityFilter">
+                            <option value="all" class="text-white">All scarcity</option>
+                            <option value="Common" class="option-common">Common</option>
+                            <option value="Rare" class="option-rare">Rare</option>
+                            <option value="Epic" class="option-epic">Epic</option>
+                            <option value="Legend" class="option-legend">Legend</option>
+                            <option value="Mysthic" class="option-mystic">Mysthic</option>
+                            <option value="Runes type 1" class="option-runes-type-1">Runes type 1</option>
+                            <option value="Runes type 2" class="option-runes-type-2">Runes type 2</option>
+                            <option value="Runes type 3" class="option-runes-type-3">Runes type 3</option>
+                            <option value="Runes type 4" class="option-runes-type-4">Runes type 4</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="itemList">
+                </div>
+            <div id="itemTooltip" class="tooltip-custom"></div>
+        </section>
+    </main>
+
+    <footer class="footer text-white text-center py-3">
+        <p>&copy; 2025 Under Disaster. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script>
+        const itemListDiv = document.getElementById('itemList');
+        const itemSearchInput = document.getElementById('itemSearch');
+        const itemTypeFilterSelect = document.getElementById('itemTypeFilter');
+        const itemRarityFilterSelect = document.getElementById('itemRarityFilter');
+        const itemTooltip = document.getElementById('itemTooltip');
+
+        // Definisi kelas CSS untuk warna kelangkaan (harus sesuai dengan CSS Anda)
+        const rarityClasses = {
+            'Common': 'rarity-common',
+            'Rare': 'rarity-rare',
+            'Epic': 'rarity-epic',
+            'Legend': 'rarity-legend',
+            'Mysthic': 'rarity-mystic',
+            'Runes type 1': 'rarity-runes-type-1',
+            'Runes type 2': 'rarity-runes-type-2',
+            'Runes type 3': 'rarity-runes-type-3',
+            'Runes type 4': 'rarity-runes-type-4'
+        };
+
+        function renderItems(itemsToRender) {
+            itemListDiv.innerHTML = ''; // Kosongkan daftar item sebelumnya
+            if (itemsToRender.length === 0) {
+                itemListDiv.innerHTML = '<div class="col-12 text-center text-muted">Tidak ada item yang ditemukan.</div>';
+                return;
+            }
+
+            itemsToRender.forEach(item => {
+                const cardCol = document.createElement('div');
+                cardCol.className = 'col-md-6 col-lg-4 mb-4';
+
+                const card = document.createElement('div');
+                card.className = 'item-card';
+
+                const rarityClass = rarityClasses[item.rarity] || ''; // Dapatkan kelas warna kelangkaan
+                const effectDisplay = item.effect ? `<p><strong>Efek:</strong> ${item.effect}</p>` : '';
+
+                card.innerHTML = `
+                    <div class="item-card-header">
+                        <span class="item-name ${rarityClass}">${item.name}</span>
+                    </div>
+                    <div class="item-card-body">
+                        <p>${item.description.substring(0, 100)}...</p>
+                        <p><strong>Tipe:</strong> ${item.type}</p>
+                        <p><strong>Kelangkaan:</strong> <span class="${rarityClass}">${item.rarity}</span></p>
+                        ${effectDisplay}
+                    </div>
+                    <div class="item-card-footer">
+                        <a href="#" class="text-info view-item-detail" data-item-id="${item.id}"></a>
+                    </div>
+                `;
+                cardCol.appendChild(card);
+                itemListDiv.appendChild(cardCol);
+            });
+
+            // Tambahkan event listener untuk "Lihat Lebih Lanjut" dan tooltips
+            document.querySelectorAll('.view-item-detail').forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Mencegah link dari navigasi
+                    const itemId = event.target.dataset.itemId;
+                    const selectedItem = items.find(i => i.id == itemId);
+                    if (selectedItem) {
+                        const fullDescription = `
+                            <strong>Nama:</strong> ${selectedItem.name}<br>
+                            <strong>Tipe:</strong> ${selectedItem.type}<br>
+                            <strong>Kelangkaan:</strong> <span class="${rarityClasses[selectedItem.rarity] || ''}">${selectedItem.rarity}</span><br>
+                            ${selectedItem.effect ? `<strong>Efek:</strong> ${selectedItem.effect}<br>` : ''}
+                            <br>
+                            ${selectedItem.description}
+                        `;
+                        showTooltip(event, fullDescription);
+                    }
+                });
+            });
+
+            // Event listener untuk tooltip saat hover pada kartu item
+            document.querySelectorAll('.item-card').forEach(card => {
+                const itemId = card.querySelector('.view-item-detail').dataset.itemId;
+                const selectedItem = items.find(i => i.id == itemId);
+                if (selectedItem) {
+                    const fullDescription = `
+                        <strong>Nama:</strong> ${selectedItem.name}<br>
+                        <strong>Tipe:</strong> ${selectedItem.type}<br>
+                        <strong>Kelangkaan:</strong> <span class="${rarityClasses[selectedItem.rarity] || ''}">${selectedItem.rarity}</span><br>
+                        ${selectedItem.effect ? `<strong>Efek:</strong> ${selectedItem.effect}<br>` : ''}
+                        <br>
+                        ${selectedItem.description}
+                    `;
+                    card.addEventListener('mouseenter', (e) => showTooltip(e, fullDescription));
+                    card.addEventListener('mouseleave', hideTooltip);
+                    card.addEventListener('mousemove', positionTooltip);
+                }
+            });
+        }
+
+        let currentTooltipElement = itemTooltip;
+
+        function showTooltip(e, description) {
+            currentTooltipElement.innerHTML = description;
+            currentTooltipElement.classList.add('show');
+            positionTooltip(e);
+        }
+
+        function hideTooltip() {
+            currentTooltipElement.classList.remove('show');
+        }
+
+        function positionTooltip(e) {
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+
+            const tooltipWidth = currentTooltipElement.offsetWidth;
+            const tooltipHeight = currentTooltipElement.offsetHeight;
+
+            let mouseX = e.clientX;
+            let mouseY = e.clientY;
+
+            let x = mouseX + 15;
+            let y = mouseY + 15;
+
+            if (x + tooltipWidth > viewportWidth - 20) {
+                x = mouseX - tooltipWidth - 15;
+            }
+
+            if (y + tooltipHeight > viewportHeight - 20) {
+                y = mouseY - tooltipHeight - 15;
+            }
+
+            if (x < 10) x = 10;
+            if (y < 10) y = 10;
+
+            currentTooltipElement.style.left = `${x}px`;
+            currentTooltipElement.style.top = `${y}px`;
+        }
+
+        // Fungsi untuk menerapkan filter dan pencarian
+        function applyFiltersAndSearch() {
+            const searchTerm = itemSearchInput.value.toLowerCase();
+            const selectedType = itemTypeFilterSelect.value;
+            const selectedRarity = itemRarityFilterSelect.value;
+
+            let filteredItems = items.filter(item => {
+                const matchesSearch = item.name.toLowerCase().includes(searchTerm) ||
+                                      (item.description && item.description.toLowerCase().includes(searchTerm));
+                const matchesType = selectedType === 'all' || item.type === selectedType;
+                const matchesRarity = selectedRarity === 'all' || item.rarity === selectedRarity;
+
+                return matchesSearch && matchesType && matchesRarity;
+            });
+
+            renderItems(filteredItems);
+        }
+
+        // Event Listeners
+        itemSearchInput.addEventListener('keyup', applyFiltersAndSearch);
+        itemTypeFilterSelect.addEventListener('change', applyFiltersAndSearch);
+        itemRarityFilterSelect.addEventListener('change', applyFiltersAndSearch);
+
+        // Render items saat halaman dimuat pertama kali
+        document.addEventListener('DOMContentLoaded', () => {
+            applyFiltersAndSearch();
+        });
+    </script>
+</body>
+</html>

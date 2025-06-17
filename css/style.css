@@ -1,0 +1,30 @@
+/* ... (kode CSS sebelumnya untuk tema gelap) ... */
+
+/* Card Styling for Novel List and Platforms */
+.card {
+    background-color: var(--bs-secondary); /* Warna latar belakang card */
+    color: var(--bs-light-text); /* Warna teks dalam card */
+    border: none; /* Hilangkan border default Bootstrap */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card .card-title {
+    color: var(--bs-primary); /* Warna judul card */
+}
+
+.card .card-text.text-muted { /* Untuk sinopsis singkat */
+    color: var(--bs-muted-text) !important;
+}
+
+.card:hover {
+    transform: translateY(-7px); /* Efek hover lebih menonjol */
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25) !important; /* Bayangan lebih gelap */
+}
+
+/* Ensure images fit well */
+.card-img-top {
+    height: 300px; /* Tinggi cover novel yang seragam */
+    object-fit: cover; /* Pastikan gambar mengisi area tanpa terdistorsi */
+}
+
+/* ... (sisa kode CSS Anda) ... */
