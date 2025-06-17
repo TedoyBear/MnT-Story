@@ -134,7 +134,7 @@
                 card.className = 'item-card';
 
                 const rarityClass = rarityClasses[item.rarity] || ''; // Dapatkan kelas warna kelangkaan
-                const effectDisplay = item.effect ? `<p><strong>Efek:</strong> ${item.effect}</p>` : '';
+                const effectDisplay = item.effect ? `<p><strong>Effect:</strong> ${item.effect}</p>` : '';
 
                 card.innerHTML = `
                     <div class="item-card-header">
@@ -165,7 +165,7 @@
                             <strong>Name:</strong> ${selectedItem.name}<br>
                             <strong>Type:</strong> ${selectedItem.type}<br>
                             <strong>Rarity:</strong> <span class="${rarityClasses[selectedItem.rarity] || ''}">${selectedItem.rarity}</span><br>
-                            ${selectedItem.effect ? `<strong>Efek:</strong> ${selectedItem.effect}<br>` : ''}
+                            ${selectedItem.effect ? `<strong>Effect:</strong> ${selectedItem.effect}<br>` : ''}
                             <br>
                             ${selectedItem.description}
                         `;
@@ -183,7 +183,7 @@
                         <strong>Name:</strong> ${selectedItem.name}<br>
                         <strong>Type:</strong> ${selectedItem.type}<br>
                         <strong>Rarity:</strong> <span class="${rarityClasses[selectedItem.rarity] || ''}">${selectedItem.rarity}</span><br>
-                        ${selectedItem.effect ? `<strong>Efek:</strong> ${selectedItem.effect}<br>` : ''}
+                        ${selectedItem.effect ? `<strong>Effect:</strong> ${selectedItem.effect}<br>` : ''}
                         <br>
                         ${selectedItem.description}
                     `;
