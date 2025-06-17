@@ -142,8 +142,8 @@
                     </div>
                     <div class="item-card-body">
                         <p>${item.description.substring(0, 100)}...</p>
-                        <p><strong>Tipe:</strong> ${item.type}</p>
-                        <p><strong>Kelangkaan:</strong> <span class="${rarityClass}">${item.rarity}</span></p>
+                        <p><strong>Type:</strong> ${item.type}</p>
+                        <p><strong>Rarity:</strong> <span class="${rarityClass}">${item.rarity}</span></p>
                         ${effectDisplay}
                     </div>
                     <div class="item-card-footer">
@@ -162,9 +162,9 @@
                     const selectedItem = items.find(i => i.id == itemId);
                     if (selectedItem) {
                         const fullDescription = `
-                            <strong>Nama:</strong> ${selectedItem.name}<br>
-                            <strong>Tipe:</strong> ${selectedItem.type}<br>
-                            <strong>Kelangkaan:</strong> <span class="${rarityClasses[selectedItem.rarity] || ''}">${selectedItem.rarity}</span><br>
+                            <strong>Name:</strong> ${selectedItem.name}<br>
+                            <strong>Type:</strong> ${selectedItem.type}<br>
+                            <strong>Rarity:</strong> <span class="${rarityClasses[selectedItem.rarity] || ''}">${selectedItem.rarity}</span><br>
                             ${selectedItem.effect ? `<strong>Efek:</strong> ${selectedItem.effect}<br>` : ''}
                             <br>
                             ${selectedItem.description}
@@ -180,9 +180,9 @@
                 const selectedItem = items.find(i => i.id == itemId);
                 if (selectedItem) {
                     const fullDescription = `
-                        <strong>Nama:</strong> ${selectedItem.name}<br>
-                        <strong>Tipe:</strong> ${selectedItem.type}<br>
-                        <strong>Kelangkaan:</strong> <span class="${rarityClasses[selectedItem.rarity] || ''}">${selectedItem.rarity}</span><br>
+                        <strong>Name:</strong> ${selectedItem.name}<br>
+                        <strong>Type:</strong> ${selectedItem.type}<br>
+                        <strong>Rarity:</strong> <span class="${rarityClasses[selectedItem.rarity] || ''}">${selectedItem.rarity}</span><br>
                         ${selectedItem.effect ? `<strong>Efek:</strong> ${selectedItem.effect}<br>` : ''}
                         <br>
                         ${selectedItem.description}

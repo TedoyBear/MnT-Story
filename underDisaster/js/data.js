@@ -52,7 +52,7 @@ const characters = [
         race: "High Human",
         level: 100,
         power: 4520,
-        description: "Seorang ksatria pemberani yang berjuang untuk keadilan, bersenjatakan pedang suci.",
+        description: "10th General from Sandrock Kingdom",
         stats: {
             hp: { base: 4769, withItem: 4769 },
             physicalDmg: { base: 448, withItem: 792 },
@@ -64,25 +64,5 @@ const characters = [
         },
         equippedItems: [10001, 13001],
         learnedSkills: [20001, 20002]
-    },
-    {
-        id: 2,
-        name: "Penyihir Bayangan",
-        role: ["Mage", "Necromancer"],
-        race: "Elf",
-        level: 48,
-        power: 1500,
-        description: "Menguasai mantra-mantra gelap untuk menghancurkan musuh dan memanggil roh.",
-        stats: {
-            hp: { base: 900, withItem: 1200 },
-            physicalDmg: { base: 20, withItem: 30 },
-            magicDmg: { base: 180, withItem: 250 },
-            physicalDef: { base: 40, withItem: 55 },
-            magicDef: { base: 120, withItem: 160 },
-            agi: { base: 70, withItem: 85 },
-            mana: { base: 500, withItem: 650 }
-        },
-        equippedItems: [104, 13001],
-        learnedSkills: [202, 207, 210]
     },
 ];

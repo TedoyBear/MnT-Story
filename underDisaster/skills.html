@@ -119,7 +119,7 @@
                     </div>
                     <div class="skill-card-body">
                         <p>${skill.description.substring(0, 100)}...</p>
-                        <p><strong>Tipe:</strong> ${skill.type}</p>
+                        <p><strong>Type:</strong> ${skill.type}</p>
                         ${EffectSkillDisplay}
                         ${manaCostDisplay}
                         ${cooldownDisplay}
@@ -140,8 +140,8 @@
                     const selectedSkill = skills.find(s => s.id == skillId);
                     if (selectedSkill) {
                         const fullDescription = `
-                            <strong>Nama:</strong> ${selectedSkill.name}<br>
-                            <strong>Tipe:</strong> ${selectedSkill.type}<br>
+                            <strong>Name:</strong> ${selectedSkill.name}<br>
+                            <strong>Type:</strong> ${selectedSkill.type}<br>
                             ${selectedSkill.effect !== undefined ? `<strong>Effect:</strong> ${selectedSkill.effect}<br>` : ''}
                             ${selectedSkill.manaCost !== undefined ? `<strong>Mana Cost:</strong> ${selectedSkill.manaCost}<br>` : ''}
                             ${selectedSkill.cooldown !== undefined ? `<strong>Cooldown:</strong> ${selectedSkill.cooldown}s<br>` : ''}
@@ -156,11 +156,11 @@
             // Event listener untuk tooltip saat hover pada kartu skill
             document.querySelectorAll('.skill-card').forEach(card => {
                 const skillName = card.querySelector('.skill-card-header').textContent.trim();
-                const selectedSkill = skills.find(s => s.name === skillName); // Cari skill berdasarkan nama di header
+                const selectedSkill = skills.find(s => s.name === skillName); // Cari skill berdasarkan Name di header
                 if (selectedSkill) {
                     const fullDescription = `
-                        <strong>Nama:</strong> ${selectedSkill.name}<br>
-                        <strong>Tipe:</strong> ${selectedSkill.type}<br>
+                        <strong>Name:</strong> ${selectedSkill.name}<br>
+                        <strong>Type:</strong> ${selectedSkill.type}<br>
                         ${selectedSkill.effect !== undefined ? `<strong>Effect:</strong> ${selectedSkill.effect}<br>` : ''}
                         ${selectedSkill.manaCost !== undefined ? `<strong>Mana Cost:</strong> ${selectedSkill.manaCost}<br>` : ''}
                         ${selectedSkill.cooldown !== undefined ? `<strong>Cooldown:</strong> ${selectedSkill.cooldown}s<br>` : ''}
