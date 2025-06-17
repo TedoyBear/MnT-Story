@@ -4,7 +4,7 @@
     /* Define custom CSS variables for easier theming */
     --primary-bg-color: #1a1a2e;        /* Latar belakang sangat gelap (Deep Blue/Purple-ish) */
     --secondary-bg-color: #2e2e4e;      /* Latar belakang untuk card atau elemen kedua (Slightly lighter than primary-bg-color) */
-    --accent-color: #9356c5;            /* Warna ungu cerah untuk aksen (Blue Violet) */
+    --accent-color: #482a61;            /* Warna ungu cerah untuk aksen (Blue Violet) */
     --light-text-color: #e0e0e0;        /* Warna teks terang untuk kontras */
     --muted-text-color: #b0b0b0;        /* Warna teks lebih redup */
     --card-hover-shadow: rgba(110, 76, 172, 0.342); /* Bayangan hover dengan sentuhan warna aksen */
