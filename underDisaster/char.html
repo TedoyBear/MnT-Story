@@ -80,7 +80,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content bg-dark text-white">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="statsModalLabel">Statistics Character: <span id="modalCharName"></span></h5>
+                    <h5 class="modal-title" id="statsModalLabel"><span id="modalCharName"></span> | <span id="modalCharDetailRole"></h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -154,6 +154,7 @@
         // Elements for modal content
         const modalCharName = document.getElementById('modalCharName');
         const modalCharDetailName = document.getElementById('modalCharDetailName');
+        const modalCharDetailRole = document.getElementById('modalCharDetailRole');
         const modalCharDetailRace = document.getElementById('modalCharDetailRace');
         const modalCharDetailLevel = document.getElementById('modalCharDetailLevel');
         const modalCharDetailPower = document.getElementById('modalCharDetailPower');
@@ -238,6 +239,7 @@
                         // Populate Main Character Details in Modal
                         modalCharName.textContent = selectedChar.name;
                         modalCharDetailName.textContent = selectedChar.name;
+                        modalCharDetailRole.textContent = selectedChar.role;
                         modalCharDetailRace.textContent = selectedChar.race;
                         modalCharDetailLevel.textContent = selectedChar.level;
                         modalCharDetailPower.textContent = selectedChar.power;
