@@ -270,7 +270,7 @@
                                     const listItem = document.createElement('li');
                                     listItem.className = `list-group-item bg-dark text-white border-secondary item-list-group-item ${rarityClass}`;
                                     listItem.innerHTML = `${item.name} <small class="ms-2">(${item.rarity})</small>`;
-                                    listItem.dataset.description = `<strong>Type:</strong> ${item.type}<br><strong>Kelangkaan:</strong> ${item.rarity}<br><strong>Efek:</strong> ${item.effect || 'Tidak ada'}<br><br>${item.description}`;
+                                    listItem.dataset.description = `<strong>Type:</strong> ${item.type}<br><strong>Rarity:</strong> ${item.rarity}<br><strong>Effect:</strong> ${item.effect || 'Tidak ada'}<br><br>${item.description}`;
                                     modalCharItemsUl.appendChild(listItem);
                                 }
                             });
